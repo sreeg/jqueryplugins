@@ -1,0 +1,248 @@
+<!doctype html>
+<html>
+	<head>
+		<title>jQuery Plugin Gallery</title>
+		<link type="text/css" rel="stylesheet" href="css/layout-default-latest.css" />
+		<link type="text/css" rel="stylesheet" href="css/LayoutPlugin.css" />
+		<link type="text/css" rel="stylesheet" href="css/colors.css" />
+		
+		<style type="text/css">
+			html, body {
+				background:	#666;
+				width:		100%;
+				height:		100%;					
+				padding:	0;
+				margin:		0;
+				overflow:	auto; /* when page gets too small */
+			}
+			#container {
+				background:	#999;
+				height:		100%;
+				margin:		0 auto;
+				width:		100%;
+				max-width:	1400px;
+				min-width:	800px;
+				_width:		800px; /* min-width for IE6 */
+			}
+			.pane {
+				display:	none; /* will appear when layout inits */
+			}
+
+			.ui-layout-north {
+				overflow: hidden;
+			}
+			
+			.ui-layout-north h3 {
+				color: WHITE;
+			}
+				
+			.ui-layout-north img{ /* 1st set of icons. Rotate them 360deg onmouseover and out */
+			-moz-transition: all 0.8s ease-in-out;
+			-webkit-transition: all 0.8s ease-in-out;
+			-o-transition: all 0.8s ease-in-out;
+			-ms-transition: all 0.8s ease-in-out;
+			transition: all 0.8s ease-in-out;
+			}
+			
+			.ui-layout-north img:hover{
+			-moz-transform: rotate(360deg);
+			-webkit-transform: rotate(360deg);
+			-o-transform: rotate(360deg);
+			-ms-transform: rotate(360deg);
+			transform: rotate(360deg);
+			}
+			
+			.ui-layout-south {
+				text-align: center;
+				font-family: verdana;
+				font-size: 9px;
+			}
+			
+			.ui-layout-north select {
+				background: BLACK;
+				width: 90px;
+				padding: 2px;
+				font-size: 10px;
+				border: 1px solid #ccc;
+				height: 20px;
+				color: WHITE;
+			}
+		
+			.urbangreymenu{
+			width: 190px; /*width of menu*/
+			background: white;
+			}
+			
+			.urbangreymenu .headerbar{
+			font: bold 13px Verdana;
+			color: white;
+			background: #606060 url(img/arrow.gif) no-repeat 8px 6px; /*last 2 values are the x and y coordinates of bullet image*/
+			margin-bottom: 0; /*bottom spacing between header and rest of content*/
+			text-transform: uppercase;
+			padding: 7px 0 7px 31px; /*31px is left indentation of header text*/
+			}
+			
+			.urbangreymenu ul{
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			margin-bottom: 0; /*bottom spacing between each UL and rest of content*/
+			}
+			
+			.urbangreymenu ul li{
+			padding-bottom: 2px; /*bottom spacing between menu items*/
+			}
+			
+			.urbangreymenu ul li a{
+			font: normal 12px Arial;
+			color: black;
+			background: #E9E9E9;
+			display: block;
+			padding: 5px 0;
+			line-height: 17px;
+			padding-left: 8px; /*link text is indented 8px*/
+			text-decoration: none;
+			}
+			
+			.urbangreymenu ul li a:visited{
+			color: black;
+			}
+			
+			.urbangreymenu ul li a:hover{ /*hover state CSS*/
+			color: white;
+			background: black;
+			}
+	
+		</style>		
+		<script src="js/jquery-1.7.1.min.js" type="text/javascript"></script>
+		<script type="text/javascript" src="js/jquery-ui-latest.js"></script>
+		<script type="text/javascript" src="js/jquery.layout-latest.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function () {
+				var layout = $('#container').layout({south__resizable: false, south__closable: false, north__resizable: false, north__closable: false});
+				layout.sizePane("west", 210);
+				
+				$('.theme').change(function() {
+					
+					 $('.ui-layout-north').removeClass('red');
+					 $('.ui-layout-north').removeClass('gray');
+					 $('.ui-layout-north').removeClass('blue');
+					 $('.ui-layout-north').removeClass('rosy');
+					 $('.ui-layout-north').removeClass('black');
+					 $('.ui-layout-north').removeClass('white');
+					 $('.ui-layout-north').removeClass('orange');
+					 $('.ui-layout-north').removeClass('green');
+					 $('.ui-layout-north').removeClass('pink');
+					 
+					 $('.ui-layout-west').removeClass('red');
+					 $('.ui-layout-west').removeClass('gray');
+					 $('.ui-layout-west').removeClass('blue');
+					 $('.ui-layout-west').removeClass('rosy');
+					 $('.ui-layout-west').removeClass('black');
+					 $('.ui-layout-west').removeClass('white');
+					 $('.ui-layout-west').removeClass('orange');
+					 $('.ui-layout-west').removeClass('green');
+					 $('.ui-layout-west').removeClass('pink');
+					 
+					 $('.ui-layout-north').addClass($('.theme option:selected').val());
+					 $('.ui-layout-west').addClass($('.theme option:selected').val());
+					 if($('.theme option:selected').val() == 'white') {
+						$('.ui-layout-north h3').css('color', 'black');	
+						$('.ui-layout-north select').css('color', 'black');
+						$('.ui-layout-north select').css('background', 'white');
+					 }
+					 else {
+						 $('.ui-layout-north h3').css('color', 'white');
+						 $('.ui-layout-north select').css('color', 'white');
+						 $('.ui-layout-north select').css('background', 'black');
+					 }
+				});
+				$('.headerbar').click(function () {
+						
+						$(this).next('ul').slideToggle(600);
+						
+						//$(this).css('-webkit-transform', 'rotate(180deg)');
+						//$(this).css('-moz-transform', 'rotate(180deg)');
+						//$(this).css('-ms-transform', 'rotate(180deg)');
+						//$(this).css('-o-transform', 'rotate(180deg)');
+						//$(this).css('transform', 'rotate(180deg)');
+						
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="container">
+			<iframe name="centerFrame" class="pane ui-layout-center" src="default.html"></iframe>
+			<div class="pane ui-layout-north red">
+				<img border="0" src="img/pegaButton.png" style="float:left" />
+				<h3>&nbsp;&nbsp;CSS3 | HTML5 | jQuery - Interesting Plugins
+				<span style="float:right">
+					<select class="theme" name="theme">
+						<option value="red">Red</option>
+						<option value="gray">Gray</option>
+						<option value="blue">Blue</option>
+						<option value="rosy">Rosy</option>
+						<option value="black">Black</option>
+						<option value="white">White</option>
+						<option value="orange">Orange</option>
+						<option value="green">Green</option>
+						<option value="pink">Pink</option>
+					</select>
+				</span>
+				</h3>
+			</div>
+			<div class="pane ui-layout-south">Copy Rights Pega Systems - Product Management</div>
+			<div class="pane ui-layout-west red">
+				<div class="urbangreymenu">
+				
+					<h3 class="headerbar">MENUS</h3>
+					<ul>
+						<li><a href="#" onclick="parent.centerFrame.location.href='animatedNavMenu/animatedMenu.html';return true;">Animated Nav Menu</a></li>
+						<li><a href="#" onclick="parent.centerFrame.location.href='lavaLamp/demo.html';return true;">Lava Lamp</a></li>
+						<li><a href="#" onclick="parent.centerFrame.location.href='verticalSlantedMenu/verticalMenu.html';return true;">Slanted Vertical Menu</a></li>
+						<li><a href="#" onclick="parent.centerFrame.location.href='CreativeCSS3AnimationMenus/index.html';return true;">CSS3 Animated Menus</a></li>
+						<li><a href="#" onclick="parent.centerFrame.location.href='SlideDownBoxMenu/index.html';return true;">Slide Down Menus</a></li>
+					</ul>
+					
+					<h3 class="headerbar">IMAGES</h3>
+					<ul>
+						<li><a href="#" onclick="parent.centerFrame.location.href='jQuery.popeye/plugin.html';return true;">Popeye</a></li>	
+						<li><a href="#" onclick="parent.centerFrame.location.href='SpinningIcons/index.html';return true;">Spinning Icons</a></li>
+						<li><a href="#" onclick="parent.centerFrame.location.href='3DGallery/index.html';return true;">3D Gallery</a></li>
+					</ul>
+					
+					<h3 class="headerbar">CSS3</h3>
+					<ul>
+						<!--
+						<li><a href="#" onclick="parent.centerFrame.location.href='roundedCorners/plugin.html';return true;">Rounded Corners</a></li>	
+						<li><a href="#" onclick="parent.centerFrame.location.href='grdientBG/index.html';return true;">Gradient Backgrounds</a></li>
+						<li><a href="#" onclick="parent.centerFrame.location.href='softyButtons/index.html';return true;">Softy Buttons</a></li>
+						-->
+						<li><a href="#" onclick="parent.centerFrame.location.href='CSS3Tooltips/index.html';return true;">Animated Tooltips</a></li>
+						<li><a href="#" onclick="parent.centerFrame.location.href='CSS3SlidingImagePanels/index.html';return true;">Sliding Image Panels</a></li>
+						<li><a href="#" onclick="parent.centerFrame.location.href='ItemBlur/index.html';return true;">Item Blur</a></li>
+					</ul>
+					
+					<h3 class="headerbar">FIELDS</h3>
+					<ul>
+						<li><a href="#" onclick="parent.centerFrame.location.href='lookup/index.html';return true;">Lookup Fields</a></li>		
+					</ul>
+
+					<h3 class="headerbar">OVELAY</h3>
+					<ul>
+						<li><a href="#" onclick="parent.centerFrame.location.href='overlay/default.html';return true;">Overlay</a></li>		
+					</ul>						
+					
+					<h3 class="headerbar">OTHER</h3>
+					<ul>
+						<li><a href="#" onclick="parent.centerFrame.location.href='turnPage/index.html';return true;">Turn Page</a></li>		
+						<li><a href="#" onclick="parent.centerFrame.location.href='NewModal/index.html';return true;">Fluid Modal Dialog (YUI)</a></li>		
+					</ul>					
+									
+				</div>
+			
+			</div>
+		</div>
+	</body>
+</html>

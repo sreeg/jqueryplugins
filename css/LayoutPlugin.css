@@ -1,0 +1,169 @@
+﻿.ui-layout-resizer , 
+.ui-layout-resizer-hover { /* hover-color to 'resize' */
+        background: rgb(239,239,247);
+        opacity: 1; /* on-hover, show the resizer-bar normally */
+        filter: alpha(opacity=100);
+}
+
+.ui-layout-resizer-dragging {   /* resizer beging 'dragging' */
+	    background: rgb(239,203,206);
+        opacity: 1; /* on-hover, show the resizer-bar normally */
+        filter: alpha(opacity=100);
+}
+
+.ui-layout-toggler-hover ,
+.ui-layout-toggler-open-hover  {
+        color: #666;
+        border: 0px solid #BBB; /* match pane-border */
+		background: rgb(140,166,189);
+}
+
+.ui-layout-toggler {
+        color: #666;
+        border: 0px solid #BBB; /* match pane-border */
+        background: rgb(239,239,247);
+}
+
+
+.ui-layout-resizer-closed {
+	 background: rgb(239,239,247);
+}
+
+.ui-layout-resizer-closed-hover {
+		background: rgb(189,202,218);
+}
+/*
+------------------------------------------------------------------------------------------------------
+	WEST PANE
+------------------------------------------------------------------------------------------------------
+*/
+.ui-layout-toggler-west, ui-layout-toggler-west-open {
+	background-image: url(../img/triangle_left_blue.png);
+	background-position: 0px 20px;
+	background-repeat: no-repeat;
+}
+
+.ui-layout-toggler-west-hover {
+	background: rgb(140,166,189);
+	background-image: url(../img/triangle_left_white.png);
+	background-position: 0px 20px;
+	background-repeat: no-repeat;
+}
+
+.ui-layout-toggler-west-closed{
+	background: rgb(239,239,247);
+	background-image: url(../img/triangle_right_blue.png);
+	background-position: 2px 20px;
+	background-repeat: no-repeat;
+}
+
+.ui-layout-toggler-west-closed-hover {
+	background: rgb(140,166,189);
+	background-image: url(../img/triangle_right_white.png);
+	background-position: 2px 20px;
+	background-repeat: no-repeat;
+}
+
+/*
+------------------------------------------------------------------------------------------------------
+	EAST PANE
+------------------------------------------------------------------------------------------------------
+*/
+.ui-layout-toggler-east, ui-layout-toggler-east-open {
+	background-image: url(../img/triangle_right_blue.png);
+	background-position: 2px 20px;
+	background-repeat: no-repeat;
+}
+
+.ui-layout-toggler-east-hover {
+	background: rgb(140,166,189);
+	background-image: url(../img/triangle_right_white.png);
+	background-position: 2px 20px;
+	background-repeat: no-repeat;
+}
+
+.ui-layout-toggler-east-closed {
+	background: rgb(239,239,247);
+	background-image: url(../img/triangle_left_blue.png);	
+	background-position: 0px 20px;
+	background-repeat: no-repeat;
+}
+
+.ui-layout-toggler-east-closed-hover {
+	background: rgb(140,166,189);
+	background-image: url(../img/triangle_left_white.png);
+	background-position: 2px 20px;
+	background-repeat: no-repeat;
+}
+
+/*
+------------------------------------------------------------------------------------------------------
+	NORTH PANE
+------------------------------------------------------------------------------------------------------
+*/
+.ui-layout-toggler-north, ui-layout-toggler-north-open {
+	background-image: url(../img/triangle_top_blue.png);
+	background-position: 20px 0px;
+	background-repeat: no-repeat;
+}
+
+.ui-layout-toggler-north-hover {
+	background: rgb(140,166,189);
+	background-image: url(../img/triangle_top_white.png);
+	background-position: 20px 0px;
+	background-repeat: no-repeat;
+}
+
+.ui-layout-toggler-north-closed{
+	background: rgb(239,239,247);
+	background-image: url(../img/triangle_down_blue.png);
+	background-position: 20px 0px;
+	background-repeat: no-repeat;
+}
+
+.ui-layout-toggler-north-closed-hover {
+	background: rgb(140,166,189);
+	background-image: url(../img/triangle_down_white.png);
+	background-position: 20px 0px;
+	background-repeat: no-repeat;
+}
+
+/*
+------------------------------------------------------------------------------------------------------
+	SOUTH PANE
+------------------------------------------------------------------------------------------------------
+*/
+.ui-layout-toggler-south, ui-layout-toggler-south-open {
+	background-image: url(../img/triangle_down_blue.png);
+	background-position: 20px 0px;
+	background-repeat: no-repeat;
+}
+
+.ui-layout-toggler-south-hover {
+	background: rgb(140,166,189);
+	background-image: url(../img/triangle_down_white.png);
+	background-position: 20px 0px;
+	background-repeat: no-repeat;
+}
+
+.ui-layout-toggler-south-closed{
+	background: rgb(239,239,247);
+	background-image: url(../img/triangle_top_blue.png);
+	background-position: 20px 0px;
+	background-repeat: no-repeat;
+}
+
+.ui-layout-toggler-south-closed-hover {
+	background: rgb(140,166,189);
+	background-image: url(../img/triangle_top_white.png);
+	background-position: 20px 0px;
+	background-repeat: no-repeat;
+}
+
+.pnwilayout {
+	height: 500px;
+}
+
+.ui-layout-pane {
+	overflow-x: hidden !important;
+}	

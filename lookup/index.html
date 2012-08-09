@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+	<head>
+			
+		<style>
+			input,
+			textarea,
+			select,
+			radio {
+
+			   -webkit-border-radius: 5px;
+			   -moz-border-radius: 5px;
+			   border-radius: 5px;
+			   text-indent: 3px;
+			   border: 1px solid #BBBBBB !important;
+			   width: 250px;
+			}
+			input[type=text]:focus,
+			input[type=password]:focus {
+			  outline: 1px solid red;
+			  -moz-outline-radius: 5px;
+			}
+			.labelC {
+				margin-bottom: 10px;
+				text-indent: 5px;
+				background: black;
+				color: WHITE;
+				width: 500px;
+				font-family: verdana;
+				font-size: 12px;
+			}
+			.outer {
+				margin: 40px;
+				padding: 25px;
+			   -webkit-border-radius: 5px;
+			   -moz-border-radius: 5px;
+			   border-radius: 5px;
+			   text-indent: 3px;
+			   border: 1px solid #BBBBBB !important;
+			   width: 510px;
+			}
+		</style>
+		<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$('#lookup').blur(function() {
+					$('#lookup').val('Iam Display Value');
+				});
+				$('#lookup').focus(function() {
+					$('#lookup').val('Iam Lookup Value');
+				});	
+				
+				$('#lookup1').blur(function() {
+					$('#lookup1').val('Sapna Grover');
+				});
+				$('#lookup1').focus(function() {
+					$('#lookup1').val('grovs');
+				});	
+				
+				$('#lookup11').blur(function() {
+					$('#lookup11').val('US-2116, Work Area: Runtime upgrade');
+				});
+				$('#lookup11').focus(function() {
+					$('#lookup11').val('US-2116');
+				});				
+				 
+				
+				$('#lookup2').blur(function() {
+					if($('#lookup2').val() == '1')
+					{
+						$('#lookup2').attr('lookup', '1');
+						$('#lookup2').val('1, One');
+					}
+					if($('#lookup2').val() == '2')
+					{
+						$('#lookup2').attr('lookup', '2');
+						$('#lookup2').val('2, Two');
+					}
+				});
+				$('#lookup2').focus(function() {
+					$('#lookup2').val($('#lookup2').attr('lookup'));
+				});	
+		});
+		</script>
+	</head>
+	<body>
+		<div class="outer">
+		<div class="labelC"> Foucus and blur on text box to notice difference!</div>
+		<div>
+			<input type="text" id="lookup" value="Iam Display Value" />
+		</div>
+		<br>
+		<div>
+			<input type="text" id="lookup1" value="Sapna Grover" />
+		</div>
+		<br>
+		<div>
+			<input type="text" id="lookup11" value="US-2116, Work Area: Runtime upgrade" />
+		</div>		
+		<br>
+		<div class="labelC"> Enter 1 or 2 in the text box and blur</div>
+		<div>
+			<input type="text" id="lookup2" lookup="" value="" />
+		</div>
+		</div>
+	</body>
+</html>

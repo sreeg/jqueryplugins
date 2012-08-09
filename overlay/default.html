@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="../js/jquery.tools.min.js"></script>
+		<style>
+		body {
+    padding:50px 80px;
+    font-family:"Lucida Grande","bitstream vera sans","trebuchet ms",sans-serif,verdana;
+}
+
+/* get rid of those system borders being generated for A tags */
+a:active {
+    outline:none;
+}
+
+:focus {
+    -moz-outline-style:none;
+}
+
+
+/* the overlayed element */
+.simple_overlay {
+
+    /* must be initially hidden */
+    display:none;
+
+    /* place overlay on top of other elements */
+    z-index:10000;
+
+    /* styling */
+    background-color:#333;
+
+    width:675px;
+    min-height:200px;
+    border:1px solid #666;
+
+    /* CSS3 styling for latest browsers */
+    -moz-box-shadow:0 0 90px 5px #000;
+    -webkit-box-shadow: 0 0 90px #000;
+}
+
+/* close button positioned on upper right corner */
+.simple_overlay .close {
+    background-image:url(/media/img/overlay/close.png);
+    position:absolute;
+    right:-15px;
+    top:-15px;
+    cursor:pointer;
+    height:35px;
+    width:35px;
+}
+
+		</style>
+	</head>
+
+
+
+<body><!-- trigger elements -->
+<div id="triggers">
+  <img src="http://farm4.static.flickr.com/3651/3445879840_7ca4b491e9_m.jpg" rel="#mies1">
+  <img src="http://farm4.static.flickr.com/3346/3449388113_71a06b8548_m.jpg" rel="#mies2">
+</div>
+
+<!-- overlays -->
+<div class="simple_overlay" id="mies1" style="top: 92.4px; left: 621.5px; position: fixed; display: none; "><a class="close"></a>
+  <img src="http://farm4.static.flickr.com/3651/3445879840_7ca4b491e9.jpg">
+
+  <div class="details">
+    <h3>The Barcelona Pavilion</h3>
+    <h4>Barcelona, Spain</h4>
+    <p>
+      The Barcelona Pavilion, designed by Ludwig Mies van der Rohe,
+      was the German Pavilion for the 1929 International Exposition in
+      Barcelona, Spain. It was an important building in the history of
+      modern architecture.
+    </p>
+    <p>
+      Several critics, historians and modernists have declared it "the
+      most beautiful building of the century"
+    </p>
+  </div>
+</div>
+
+<div class="simple_overlay" id="mies2"><a class="close"></a>
+  <img src="http://farm4.static.flickr.com/3346/3449388113_71a06b8548.jpg">
+  <div class="details">
+    <h3>The Barcelona Pavilion</h3>
+    <h4>Barcelona, Spain</h4>
+    <p>
+      Another unique feature of this building is the <em>exotic
+      materials Mies chose to use</em>.
+    </p>
+    <p>
+      Plates of high-grade stone materials like veneers of Tinos verde
+      antico marble and golden onyx as well as tinted glass of grey,
+      green, white, in addition to translucent glass, perform
+      exclusively as spatial dividers.
+    </p>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function() {
+      $("img[rel]").overlay();
+    });
+</script>
+
+</body>
+
+</html>

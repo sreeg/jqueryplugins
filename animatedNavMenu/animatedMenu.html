@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+	<head>
+		<style>
+			*{
+				font-family: arial, helvetica, sans-serif;
+			}
+			#navcontainer ul
+			{
+				padding-left: 0;
+				margin-left: 0;
+				background-color: #222;
+				color: White;
+				float: left;
+				width: 100%;
+				font-size:13px;
+				text-transform:uppercase;
+				font-weight:bold;
+			}
+			 
+			#navcontainer ul li { display: inline; }
+			 
+			#navcontainer ul li a
+			{
+				padding: 0.7em 1.8em;
+				background-color: #222;
+				color: White;
+				text-decoration: none;
+				float: left;
+				width:100px;
+				border-right: 1px solid #fff;
+			}
+		</style>
+		<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+		<script>
+			$(function(){
+				$("#navlist a").hover(function(){
+					$(this).css("background-color","#369");
+					$(this).animate({ width: '200px'}, {duration: 200,queue:false});
+				},
+				function(){
+					$(this).css("background-color","#222");
+					$(this).animate({ width: '100px' }, {duration: 200,queue:false});
+				});		
+			});		
+		</script>
+	</head>
+	<body>
+		<div id="navcontainer">
+			<ul id="navlist">
+				<li><a href="#">Google</a></li>
+				<li><a href="#">Yahoo</a></li>
+				<li><a href="#">MSN</a></li>
+				<li><a href="#">Pega</a></li>
+				<li><a href="#">Amazon</a></li>
+			</ul>
+		</div>
+	</body>
+</html>
